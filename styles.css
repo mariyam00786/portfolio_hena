@@ -451,15 +451,59 @@ body, a, button { cursor: none !important; }
     transform: scale(1.05);
 }
 
+/* UI Enhancements */
+.project-item {
+    padding: 20px;
+    background: rgba(0,0,0,0.02);
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.project-item:hover {
+    background: rgba(0,0,0,0.05);
+    border-left: 3px solid var(--red);
+    transform: translateX(10px);
+}
+
+.team-member {
+    padding: 30px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.team-member:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-10px);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (hover: none) and (pointer: coarse) {
+    .custom-cursor, .custom-cursor-dot { display: none !important; }
+    body, a, button, .primary-btn { cursor: auto !important; }
+}
+
 @media (max-width: 1024px) {
     .slide { flex-direction: column; min-height: auto; }
     .projects-left, .founder-left { padding: 40px; }
     .projects-right { padding: 40px; grid-template-columns: 1fr; }
-    .clients-grid, .team-grid, .gallery-grid { grid-template-columns: 1fr; }
+    .clients-grid, .team-grid, .gallery-grid, .video-grid { grid-template-columns: 1fr; }
     .section-padding { padding: 40px; }
     .huge-title { font-size: 4rem; }
     .founder-giant-number { font-size: 15rem; left: 0; }
     .founder-text { margin-left: 0; padding: 20px; }
     .contact-info { position: static; text-align: left; margin-top: 50px; }
     .contact-info h2 { font-size: 2rem; }
+    .side-nav { display: none; }
+}
+
+@media (max-width: 768px) {
+    body { padding: 0; gap: 0; }
+    .slide { box-shadow: none; border-bottom: 1px solid var(--dark-grey); }
+    .huge-title { font-size: 2.5rem !important; margin-bottom: 20px !important; }
+    .giant-bg-text { font-size: 3rem !important; opacity: 0.1; }
+    .founder-left, .projects-left, .projects-right, .section-padding { padding: 30px; }
+    .founder-giant-number { font-size: 10rem; opacity: 0.1; top: 10%; transform: none; }
+    .contact-info h2 { font-size: 1.5rem; }
+    .primary-btn { width: 100%; text-align: center; }
+    .video-grid, .gallery-grid { gap: 15px; }
+    .project-item { padding: 15px; }
 }
