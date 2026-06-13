@@ -732,6 +732,92 @@ body, a, button { cursor: none !important; }
     text-align: center;
 }
 
+/* Art Direction for Set Section */
+#slide-art-direction {
+    flex-direction: column;
+    align-items: center;
+}
+
+.art-direction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 15px;
+    width: 100%;
+}
+
+.art-direction-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(242, 217, 160, 0.05);
+    border: 1px solid rgba(242, 217, 160, 0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.art-direction-item.art-direction-hero {
+    grid-column: 1 / -1;
+    aspect-ratio: 21/9;
+}
+
+.art-direction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    border-color: var(--sand-gold);
+}
+
+.art-direction-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.art-direction-item:hover img {
+    transform: scale(1.05);
+}
+
+.art-direction-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.art-direction-item:hover .art-direction-overlay {
+    opacity: 1;
+}
+
+.art-direction-overlay span {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: var(--sand-gold);
+}
+
+.art-direction-item.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(242, 217, 160, 0.03);
+    border: 2px dashed rgba(242, 217, 160, 0.2);
+}
+
+.art-direction-item.placeholder::after {
+    content: 'IMAGE';
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: rgba(242, 217, 160, 0.3);
+}
+
 /* Branding Slide */
 #slide-branding {
     flex-direction: column;
