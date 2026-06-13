@@ -648,6 +648,13 @@ body, a, button { cursor: none !important; }
     transform: scale(1.05);
 }
 
+/* BTS / Gallery Slide */
+#slide-gallery {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 /* BTS Video Grid */
 .bts-video-grid {
     display: grid;
