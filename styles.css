@@ -210,11 +210,11 @@ body {
 
 .projects-right {
     flex: 1.2;
-    padding: 40px 50px;
+    padding: 30px 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px 25px;
-    align-content: center;
+    gap: 12px 25px;
+    align-content: space-evenly;
     z-index: 2;
 }
 
