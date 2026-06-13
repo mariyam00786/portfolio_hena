@@ -648,6 +648,52 @@ body, a, button { cursor: none !important; }
     transform: scale(1.05);
 }
 
+/* BTS Video Grid */
+.bts-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.bts-video-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(242, 217, 160, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bts-video-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    border-color: var(--sand-gold);
+}
+
+.bts-video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bts-video-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(59, 1, 11, 0.9), transparent);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--sand-gold);
+    text-align: center;
+}
+
 /* Branding Slide */
 #slide-branding {
     flex-direction: column;
