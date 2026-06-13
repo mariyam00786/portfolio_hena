@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-bounce');
+    const isMobile = window.innerWidth <= 768;
 
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
-        const elementVisible = 150;
+        const elementVisible = isMobile ? 80 : 150;
 
         revealElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
     revealOnScroll();
 
     // Custom Cursor Logic
