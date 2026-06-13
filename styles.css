@@ -665,8 +665,8 @@ body, a, button { cursor: none !important; }
 
 .bts-image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -674,8 +674,8 @@ body, a, button { cursor: none !important; }
 .bts-image-item {
     position: relative;
     width: 100%;
-    aspect-ratio: 4/3;
-    border-radius: 12px;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(242, 217, 160, 0.3);
@@ -1065,7 +1065,7 @@ body, a, button { cursor: none !important; }
     .projects-left, .founder-left { padding: 40px; }
     .projects-right { padding: 40px; grid-template-columns: 1fr; }
     .clients-grid, .team-grid, .gallery-grid, .video-grid { grid-template-columns: 1fr; }
-    .bts-image-grid { grid-template-columns: repeat(3, 1fr); }
+    .bts-image-grid { grid-template-columns: repeat(5, 1fr); }
     .bts-video-grid { grid-template-columns: repeat(3, 1fr); }
     .branding-bts-grid { grid-template-columns: 1fr; }
     .branding-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1149,7 +1149,7 @@ body, a, button { cursor: none !important; }
         margin-top: 20px; 
     }
     .gallery-item { aspect-ratio: 1/1; border-radius: 4px; }
-    .bts-image-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .bts-image-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .bts-video-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
 
     /* Branding */
