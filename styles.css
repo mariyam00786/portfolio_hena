@@ -1643,3 +1643,210 @@ body, a, button { cursor: none !important; }
     .play-icon { font-size: 0.9rem; }
     .video-label { font-size: 0.6rem; letter-spacing: 2px; }
 }
+
+/* ===== ADDITIONAL ANIMATIONS ===== */
+
+/* Reveal Left / Right / Bounce */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-bounce {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal-bounce.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Gold shimmer on hover for branding items */
+.branding-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(242, 217, 160, 0.15), transparent);
+    transition: left 0.8s ease;
+    pointer-events: none;
+}
+
+.branding-item:hover::after {
+    left: 150%;
+}
+
+/* Subtle pulse on stats numbers */
+@keyframes statPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.stat-number {
+    animation: statPulse 3s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.founder-stats:hover .stat-number {
+    animation-play-state: running;
+}
+
+/* Smooth border glow for BTS images on hover */
+.bts-image-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid transparent;
+    transition: border-color 0.4s ease;
+    pointer-events: none;
+}
+
+.bts-image-item:hover::after {
+    border-color: var(--sand-gold);
+}
+
+/* Project item number indicator */
+.project-item {
+    counter-increment: project-counter;
+    position: relative;
+}
+
+.project-item::after {
+    content: counter(project-counter, decimal-leading-zero);
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    font-weight: 900;
+    opacity: 0.2;
+    color: var(--red);
+    letter-spacing: 1px;
+}
+
+.projects-right {
+    counter-reset: project-counter;
+}
+
+/* Contact slide text entrance */
+.contact-slide .contact-address {
+    animation: slideInLeft 0.8s ease-out both;
+}
+
+.contact-slide .contact-info {
+    animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Marquee pause on hover */
+.brands-marquee:hover .brands-marquee-track {
+    animation-play-state: paused;
+}
+
+/* Team member card entrance stagger */
+.team-grid .team-member {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-grid.active .team-member:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.team-grid.active .team-member:nth-child(2) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.team-grid.active .team-member:nth-child(3) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+/* Subtle floating animation for play buttons */
+@keyframes floatPlay {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.video-play-overlay .play-btn-circle {
+    animation: floatPlay 3s ease-in-out infinite;
+}
+
+/* Art gallery smooth scroll hint */
+.art-gallery-grid::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(to left, var(--dark-grey) 10%, transparent);
+    pointer-events: none;
+    z-index: 5;
+}
+
+#slide-art-direction {
+    position: relative;
+}
+
+/* Cover text glow effect */
+.cover-word {
+    text-shadow: 0 0 40px rgba(242, 217, 160, 0.1);
+}
+
+/* Smooth page scroll snap feel */
+@media (min-width: 769px) {
+    html {
+        scroll-padding-top: 40px;
+    }
+}
+
+/* Mobile touch feedback */
+@media (hover: none) {
+    .project-item:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+    
+    .primary-btn:active {
+        transform: scale(0.95);
+    }
+    
+    .bts-image-item:active {
+        transform: scale(0.97);
+    }
+
+    .video-play-overlay .play-btn-circle {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .loader, .custom-cursor, .custom-cursor-dot, .side-nav, .scroll-indicator { display: none; }
+    body { padding: 0; gap: 20px; }
+    .slide { box-shadow: none; page-break-inside: avoid; }
+}

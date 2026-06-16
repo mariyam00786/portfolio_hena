@@ -197,4 +197,52 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // Number counter animation for stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let statsCounted = false;
+
+    function animateCounters() {
+        if (statsCounted) return;
+        const statsSection = document.querySelector('.founder-stats');
+        if (!statsSection) return;
+
+        const rect = statsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            statsCounted = true;
+            statNumbers.forEach(el => {
+                const text = el.textContent;
+                const hasPlus = text.includes('+');
+                const target = parseInt(text);
+                if (isNaN(target)) return;
+
+                let current = 0;
+                const increment = target / 40;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.floor(current) + (hasPlus ? '+' : '');
+                }, 30);
+            });
+        }
+    }
+
+    window.addEventListener('scroll', animateCounters, { passive: true });
+    animateCounters();
+
+    // Hide scroll indicator on scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.transition = 'opacity 0.5s ease';
+            } else {
+                scrollIndicator.style.opacity = '';
+            }
+        }, { passive: true });
+    }
 });
