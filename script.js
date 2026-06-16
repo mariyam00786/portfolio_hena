@@ -123,6 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = container.querySelector('video');
         const overlay = container.querySelector('.video-play-overlay');
 
+        // Force load thumbnail on mobile
+        video.addEventListener('loadeddata', () => {
+            if (video.currentTime < 1) {
+                video.currentTime = 0.001;
+            }
+        });
+
         container.addEventListener('click', () => {
             if (video.paused) {
                 // Pause all other videos first
