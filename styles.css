@@ -1202,8 +1202,8 @@ body, a, button { cursor: none !important; }
 
     /* Gallery / BTS */
     #slide-gallery { padding: 30px 12px; }
-    .bts-image-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .bts-image-item { border-radius: 6px; border-width: 1px; }
+    .bts-image-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .bts-image-item { border-radius: 8px; border-width: 1px; }
     .bts-video-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
     .bts-video-item { border-radius: 8px; }
     .bts-video-label { font-size: 0.6rem; letter-spacing: 1px; padding: 10px; }
