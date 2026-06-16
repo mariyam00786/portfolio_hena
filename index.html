@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nafeesa Thanzeen RS - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Nafeesa Thanzeen RS - Production Coordinator & Art Director</title>
+    <meta name="description" content="Portfolio of Nafeesa Thanzeen RS - Media Professional specializing in Production Coordination, Art Direction & Visual Storytelling.">
+    <meta property="og:title" content="Nafeesa Thanzeen RS - Portfolio">
+    <meta property="og:description" content="Production Coordinator & Art Director based in Kerala, India.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+            <span class="loader-text">NAFEESA THANZEEN</span>
+        </div>
+    </div>
 
     <!-- UI Components -->
     <div class="custom-cursor"></div>
     <div class="custom-cursor-dot"></div>
     <div class="side-nav reveal">
-        <a href="#slide-founder" class="nav-dot active" title="Profile"></a>
+        <a href="#slide-cover" class="nav-dot active" title="Home"></a>
+        <a href="#slide-founder" class="nav-dot" title="Profile"></a>
         <a href="#slide-projects" class="nav-dot" title="Projects"></a>
         <a href="#slide-clients" class="nav-dot" title="Clients"></a>
         <a href="#slide-featured-video" class="nav-dot" title="Featured Video"></a>
@@ -23,11 +36,27 @@
         <a href="#slide-contact" class="nav-dot" title="Contact"></a>
     </div>
 
+    <!-- 0. Cover Slide -->
+    <div class="slide cover-slide" id="slide-cover">
+        <div class="cover-top">PORTFOLIO 2026</div>
+        <div class="cover-middle">
+            <span class="cover-word">Nafeesa</span>
+            <span class="cover-word">Thanzeen</span>
+        </div>
+        <div class="cover-bottom">
+            <div class="cover-logo">
+                <span class="cover-logo-name">Production Coordinator</span>
+                <span class="cover-logo-title">Art Direction &bull; Visual Storytelling &bull; Brand Campaigns</span>
+            </div>
+        </div>
+    </div>
+
     <!-- 1. Founder / Profile Slide -->
     <div class="slide" id="slide-founder">
         <div class="giant-bg-text">NAFEESA<br>THANZEEN</div>
         <div class="founder-left">
             <div class="founder-text reveal">
+                <span class="section-tag">ABOUT ME</span>
                 <h2>NAFEESA THANZEEN RS</h2>
                 <p>
                     I'm a media professional with a postgraduate degree in Journalism and Mass Communication. I've dedicated my career to coordinating high-quality video production projects, assisting in art direction, and managing complex production schedules.
@@ -35,6 +64,20 @@
                 <p>
                     Throughout my career, I've worked with international and local brands, bringing a keen eye for visual storytelling and strategic content delivery. I excel at bridging the gap between creative vision and logistical execution on set.
                 </p>
+                <div class="founder-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">16+</span>
+                        <span class="stat-label">Brands</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="founder-right reveal">
@@ -48,33 +91,42 @@
             <img src="assets/hero_bg.png" alt="Set Background" class="projects-bg-img">
             <h2 class="huge-title">PRO<br>JECTS</h2>
         </div>
-        <div class="projects-right reveal">
+        <div class="projects-right reveal reveal-stagger">
             <div class="project-item">
                 <h4>LULU HYPERMARKET CAMPAIGN</h4>
+                <span class="project-tag">Production Coordinator</span>
             </div>
             <div class="project-item">
                 <h4>EASTERN CONDIMENTS COMMERCIAL</h4>
+                <span class="project-tag">Art Direction</span>
             </div>
             <div class="project-item">
                 <h4>AJMI FOODS ADVERTISEMENT</h4>
+                <span class="project-tag">Production Coordinator</span>
             </div>
             <div class="project-item">
                 <h4>NELLARA BRAND VIDEO</h4>
+                <span class="project-tag">Set Coordination</span>
             </div>
             <div class="project-item">
                 <h4>LAKSHMI JEWELLERY</h4>
+                <span class="project-tag">Art Direction</span>
             </div>
             <div class="project-item">
                 <h4>KERALA VISION</h4>
+                <span class="project-tag">Production</span>
             </div>
             <div class="project-item">
                 <h4>MAMMOOTTY KAMBIPETTI SHORT FILM</h4>
+                <span class="project-tag">Art Direction</span>
             </div>
             <div class="project-item">
                 <h4>AABHARAN JEWELLERS</h4>
+                <span class="project-tag">Production Coordinator</span>
             </div>
             <div class="project-item">
                 <h4>VARIOUS CORPORATE INTERVIEWS</h4>
+                <span class="project-tag">Coordination</span>
             </div>
         </div>
     </div>
@@ -174,23 +226,47 @@
         
         <div class="featured-video-wrapper reveal" style="width: 100%; max-width: 1200px;">
             <div class="video-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%;">
-                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 9/16; background: var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--white); border-radius: 4px; overflow: hidden;">
-                    <video src="assets/working_video.mp4" controls playsinline preload="metadata" style="position: relative; width: 100%; height: 100%; object-fit: cover; z-index: 2;"></video>
+                <div class="video-thumb-container">
+                    <video src="assets/working_video.mp4" playsinline preload="metadata" muted></video>
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                        <span class="video-label">REEL 01</span>
+                    </div>
                 </div>
-                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 9/16; background: var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--white); border-radius: 4px; overflow: hidden;">
-                    <video src="assets/working_video_1.mp4" controls playsinline preload="metadata" style="position: relative; width: 100%; height: 100%; object-fit: cover; z-index: 2;"></video>
+                <div class="video-thumb-container">
+                    <video src="assets/working_video_1.mp4" playsinline preload="metadata" muted></video>
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                        <span class="video-label">REEL 02</span>
+                    </div>
                 </div>
-                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 9/16; background: var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--white); border-radius: 4px; overflow: hidden;">
-                    <video src="assets/working_video_2.mp4" controls playsinline preload="metadata" style="position: relative; width: 100%; height: 100%; object-fit: cover; z-index: 2;"></video>
+                <div class="video-thumb-container">
+                    <video src="assets/working_video_2.mp4" playsinline preload="metadata" muted></video>
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                        <span class="video-label">REEL 03</span>
+                    </div>
                 </div>
-                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 9/16; background: var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--white); border-radius: 4px; overflow: hidden;">
-                    <video src="assets/working_video_3.mp4" controls playsinline preload="metadata" style="position: relative; width: 100%; height: 100%; object-fit: cover; z-index: 2;"></video>
+                <div class="video-thumb-container">
+                    <video src="assets/working_video_3.mp4" playsinline preload="metadata" muted></video>
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                        <span class="video-label">REEL 04</span>
+                    </div>
                 </div>
-                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 9/16; background: var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--white); border-radius: 4px; overflow: hidden;">
-                    <video src="assets/working_video_4.mp4" controls playsinline preload="metadata" style="position: relative; width: 100%; height: 100%; object-fit: cover; z-index: 2;"></video>
+                <div class="video-thumb-container">
+                    <video src="assets/working_video_4.mp4" playsinline preload="metadata" muted></video>
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                        <span class="video-label">REEL 05</span>
+                    </div>
                 </div>
-                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 9/16; background: var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--white); border-radius: 4px; overflow: hidden;">
-                    <video src="assets/working_video_5.mp4.MP4" controls playsinline preload="metadata" style="position: relative; width: 100%; height: 100%; object-fit: cover; z-index: 2;"></video>
+                <div class="video-thumb-container">
+                    <video src="assets/working_video_5.mp4.MP4" playsinline preload="metadata" muted></video>
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                        <span class="video-label">REEL 06</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,36 +325,60 @@
         <!-- BTS Videos -->
         <h4 class="reveal" style="font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 4px; color: var(--sand-gold); margin-top: 50px; margin-bottom: 25px;">VIDEO REELS</h4>
         <div class="bts-video-grid reveal">
-            <div class="bts-video-item">
-                <video src="assets/btsv1_mp4.mp4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/btsv1_mp4.mp4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">ON SET</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/bts2_mp4.mp4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/bts2_mp4.mp4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">PRODUCTION</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/bts3_mp4.mp4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/bts3_mp4.mp4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">DIRECTION</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/bts4_mp4.MP4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/bts4_mp4.MP4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">COORDINATION</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/bts5_mp4.MP4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/bts5_mp4.MP4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">ART DIRECTION</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/btsv6_mp4.MP4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/btsv6_mp4.MP4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">CREW</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/btsv7_mp4.MP4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/btsv7_mp4.MP4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">MAKING OF</div>
             </div>
-            <div class="bts-video-item">
-                <video src="assets/btsv8_mp4.mp4" controls playsinline preload="metadata"></video>
+            <div class="bts-video-item video-thumb-container">
+                <video src="assets/btsv8_mp4.mp4" playsinline preload="metadata" muted></video>
+                <div class="video-play-overlay">
+                    <div class="play-btn-circle"><span class="play-icon">&#9654;</span></div>
+                </div>
                 <div class="bts-video-label">HIGHLIGHTS</div>
             </div>
         </div>
@@ -364,59 +464,67 @@
         <h2 class="huge-title reveal" style="font-size: 6rem; margin-bottom: 10px; color: var(--sand-gold);">ART DIRECTION</h2>
         <p class="branding-subtitle reveal">Set design & visual styling for productions</p>
 
-        <div class="art-direction-grid reveal">
-            <div class="art-direction-item art-direction-hero">
-                <img src="assets/art_dir_1.jpg.jpeg" alt="Art Direction 1">
-                <div class="art-direction-overlay">
-                    <span>SET DESIGN</span>
-                </div>
+        <div class="art-gallery-grid reveal">
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_1.jpg.jpeg" alt="Art Direction - Set Design" loading="lazy">
+                <div class="art-gallery-caption">SET DESIGN</div>
             </div>
-            <div class="art-direction-item">
-                <img src="assets/art_dir_2.jpg.jpeg" alt="Art Direction 2">
-                <div class="art-direction-overlay">
-                    <span>PROP STYLING</span>
-                </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_2.jpg.jpeg" alt="Art Direction - Prop Styling" loading="lazy">
+                <div class="art-gallery-caption">PROP STYLING</div>
             </div>
-            <div class="art-direction-item">
-                <img src="assets/art_dir_3.jpg.jpeg" alt="Art Direction 3">
-                <div class="art-direction-overlay">
-                    <span>VISUAL CONCEPT</span>
-                </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_3.jpg.jpeg" alt="Art Direction - Visual Concept" loading="lazy">
+                <div class="art-gallery-caption">VISUAL CONCEPT</div>
             </div>
-            <div class="art-direction-item">
-                <img src="assets/art_dir_4.jpg.jpeg" alt="Art Direction 4">
-                <div class="art-direction-overlay">
-                    <span>MOOD & TONE</span>
-                </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_4.jpg.jpeg" alt="Art Direction - Mood & Tone" loading="lazy">
+                <div class="art-gallery-caption">MOOD & TONE</div>
             </div>
-            <div class="art-direction-item">
-                <img src="assets/art_dir_5.jpg.jpeg" alt="Art Direction 5">
-                <div class="art-direction-overlay">
-                    <span>COLOR PALETTE</span>
-                </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_5.jpg.jpeg" alt="Art Direction - Color Palette" loading="lazy">
+                <div class="art-gallery-caption">COLOR PALETTE</div>
             </div>
-            <div class="art-direction-item">
-                <img src="assets/art_dir_6.jpg.jpeg" alt="Art Direction 6">
-                <div class="art-direction-overlay">
-                    <span>EXECUTION</span>
-                </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_6.jpg.jpeg" alt="Art Direction - Execution" loading="lazy">
+                <div class="art-gallery-caption">EXECUTION</div>
+            </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_7.jpg.jpeg" alt="Art Direction - Creative Vision" loading="lazy">
+                <div class="art-gallery-caption">CREATIVE VISION</div>
+            </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_8 (1).jpeg" alt="Art Direction - Styling" loading="lazy">
+                <div class="art-gallery-caption">STYLING</div>
+            </div>
+            <div class="art-gallery-item">
+                <img src="assets/art_dir_8 (2).jpeg" alt="Art Direction - Final Look" loading="lazy">
+                <div class="art-gallery-caption">FINAL LOOK</div>
             </div>
         </div>
     </div>
 
     <!-- 5. Contact Slide -->
     <div class="slide dark contact-slide" id="slide-contact">
-        <div class="giant-bg-text" style="font-size: clamp(10rem, 25vw, 30rem);">CONNECT<br>WITH US</div>
+        <div class="giant-bg-text" style="font-size: clamp(10rem, 25vw, 30rem);">LET'S<br>WORK</div>
         
         <div class="contact-address">
+            <span class="section-tag" style="color: var(--sand-gold);">LOCATION</span>
             <h2>INDIA</h2>
             <p>THRISSUR, KERALA<br>INDIA</p>
         </div>
         <div class="contact-info">
+            <span class="section-tag" style="color: var(--sand-gold);">GET IN TOUCH</span>
             <h2>+91 77365 01524</h2>
             <h2>hena567890@gmail.com</h2>
-            <a href="mailto:hena567890@gmail.com" class="primary-btn">Send Email</a>
-            <a href="https://www.linkedin.com/in/nafeesa-thanzeen-9b6684264" target="_blank" class="primary-btn">LinkedIn</a>
+            <div class="contact-btns">
+                <a href="mailto:hena567890@gmail.com" class="primary-btn">Send Email</a>
+                <a href="https://www.linkedin.com/in/nafeesa-thanzeen-9b6684264" target="_blank" class="primary-btn">LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="contact-footer">
+            <p>&copy; 2026 Nafeesa Thanzeen RS. All rights reserved.</p>
         </div>
     </div>
 
