@@ -123,11 +123,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = container.querySelector('video');
         const overlay = container.querySelector('.video-play-overlay');
 
-        // Force load thumbnail on mobile
-        video.addEventListener('loadeddata', () => {
-            if (video.currentTime < 1) {
-                video.currentTime = 0.001;
+        // Force load thumbnail on iOS - muted autoplay is allowed, so briefly play then pause
+        function forceLoadThumbnail() {
+            if (video.readyState < 2) {
+                video.muted = true;
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        setTimeout(() => {
+                            video.pause();
+                            video.currentTime = 0.001;
+                        }, 100);
+                    }).catch(() => {
+                        // Autoplay blocked, try load instead
+                        video.load();
+                    });
+                }
             }
+        }
+
+        // Try to load thumbnail after a short delay (gives iOS time to set up)
+        setTimeout(forceLoadThumbnail, 500 + Math.random() * 1000);
+
+        video.addEventListener('loadeddata', () => {
+            video.pause();
         });
 
         container.addEventListener('click', () => {
